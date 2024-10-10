@@ -21,7 +21,7 @@ combined_df['Volume'] = combined_df['Volume'].apply(remove_separators)
 
 # Сохранение данных в файл nasdaq_tsla.csv с исходными шапками и двойными кавычками
 with open('nasdaq_tsla.csv', 'w', newline='') as file:
-    file.write('"Date","Open","High","Low","Close","Volume"' + '\n')
+    file.write('Date,Open,High,Low,Close,Volume\n')
     for index, row in combined_df.iterrows():
         date_str = f'"{row["Date"].strftime("%Y-%m-%d")}"'
         open_val = f'"{row["Open"]:.4f}"'
